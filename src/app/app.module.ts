@@ -5,18 +5,27 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CourseListComponent } from './course-list/course-list.component';
 import {FormsModule} from '@angular/forms';
+import { CourseServiceClient } from './services/CourseServiceClient';
+import { CourseViewerComponent } from './course-viewer/course-viewer.component';
+import { HomeComponent } from './home/home.component';
+import { ModuleListComponent } from './module-list/module-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CourseListComponent
+    CourseListComponent,
+    CourseViewerComponent,
+    HomeComponent,
+    ModuleListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    CourseServiceClient
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CourseServiceClient } from '../services/CourseServiceClient';
 
 @Component({
   selector: 'app-course-list',
@@ -24,9 +25,12 @@ export class CourseListComponent implements OnInit {
     this.courses = this.courses.filter(course => course !== courseToDelete)
   }
 
-  constructor() { }
+  constructor(private service: CourseServiceClient) {
+    
+   }
 
-  ngOnInit(): void {
+  ngOnInit(): void { // a life-cycle function which gets called when this component is rendered. equals component did mount
+    this.service.findAllCourses().then(courses => this.courses = courses);
   }
 
 }
