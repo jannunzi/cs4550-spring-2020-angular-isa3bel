@@ -1,6 +1,7 @@
 <h3>Module list</h3>
-<ul>
-  <li *ngFor="let module of modules">
-    {{module.title}}
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let module of modules">
+    <a routerLink="/course/{{courseId}}/module/{{module._id}}">{{module.title}}</a>
   </li>
 </ul>
+<h3>{{moduleId}}</h3>
