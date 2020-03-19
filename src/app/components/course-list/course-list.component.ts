@@ -11,10 +11,7 @@ export class CourseListComponent implements OnInit {
   title = 'Course List'
   newCourseTitle = ''
   courses = [
-    {_id: '123', title: 'Course A'},
-    {_id: '234', title: 'Course B'},
-    {_id: '345', title: 'Course C'},
-    {_id: '456', title: 'Course D'},
+    
   ]
 
   createCourse = (title) => {
