@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourseListComponent implements OnInit {
 
-  title = 'Course List Component'
+  title = 'Course List'
   newCourseTitle = ''
   courses = [
     {_id: '123', title: 'Course A'},
