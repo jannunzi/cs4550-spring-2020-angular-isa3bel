@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CourseServiceClient } from '../services/CourseServiceClient';
 
 @Component({
   selector: 'app-course-list',
@@ -25,12 +24,12 @@ export class CourseListComponent implements OnInit {
     this.courses = this.courses.filter(course => course !== courseToDelete)
   }
 
-  constructor(private service: CourseServiceClient) {
-    
-   }
+  constructor() { }
 
   ngOnInit(): void { // a life-cycle function which gets called when this component is rendered. equals component did mount
-    this.service.findAllCourses().then(courses => this.courses = courses);
+    fetch('https:wbdv-generic-server.herokuapp.com/api/isabelbolger/courses')
+    .then(response => response.json())
+    .then(courses => this.courses = courses)
   }
 
 }

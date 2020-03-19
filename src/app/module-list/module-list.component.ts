@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import { ModuleServiceClient } from '../services/ModuleServiceClient';
 
 @Component({
   selector: 'app-module-list',
@@ -8,7 +9,7 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class ModuleListComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private service: ModuleServiceClient) { }
   
   modules = [
     {_id: '123', title: 'Module 1'},

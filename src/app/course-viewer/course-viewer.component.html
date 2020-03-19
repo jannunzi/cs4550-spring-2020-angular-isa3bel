@@ -3,4 +3,12 @@
 </a>
 <h1>Course Viewer for course ID {{courseId}}</h1>
 <h2>{{course.title}}</h2>
-<app-module-list></app-module-list>
+
+<div class="row">
+  <div class="col-4">
+    <app-module-list></app-module-list>
+  </div>
+  <div class="col-8">
+    <app-lesson-tabs></app-lesson-tabs>
+  </div>
+</div>
