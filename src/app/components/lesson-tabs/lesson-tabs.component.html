@@ -4,7 +4,7 @@
   <li class="nav-item"
   [class]="{'active': lesson._id===lessonId}"
   *ngFor="let lesson of lessons">
-  <a class="nav-link"routerLink="/course/{{courseId}}/module/{{moduleId}}/lesson/{{lesson._id}}">
+  <a class="nav-link"routerLink="/course/{{courseId}}/module/{{moduleId}}/lesson/{{lesson._id}}/topics">
     {{lesson.title}}
   </a>
   </li>
