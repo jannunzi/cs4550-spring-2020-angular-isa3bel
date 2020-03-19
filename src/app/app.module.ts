@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { CourseListComponent } from './course-list/course-list.component';
 import {FormsModule} from '@angular/forms';
 import { CourseServiceClient } from './services/CourseServiceClient';
+import { ModuleServiceClient } from './services/ModuleServiceClient';
+import { LessonServiceClient } from './services/LessonServiceClient';
 import { CourseViewerComponent } from './course-viewer/course-viewer.component';
 import { HomeComponent } from './home/home.component';
 import { ModuleListComponent } from './module-list/module-list.component';
@@ -26,7 +28,9 @@ import { LessonTabsComponent } from './lesson-tabs/lesson-tabs.component';
     FormsModule
   ],
   providers: [
-    CourseServiceClient
+    CourseServiceClient,
+    ModuleServiceClient,
+    LessonServiceClient,
   ],
   bootstrap: [AppComponent]
 })
