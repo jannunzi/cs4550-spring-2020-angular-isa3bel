@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import { CourseServiceClient } from '../services/CourseServiceClient';
+import { CourseServiceClient } from '../../services/CourseServiceClient';
 
 @Component({
   selector: 'app-course-viewer',
@@ -19,8 +19,7 @@ export class CourseViewerComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.courseId = params.id;
-      fetch(`https://wbdv-generic-server.herokuapp.com/api/isabelbolger/courses/${this.courseId}`)
-      .then(response => response.json())
+      this.service.findCourseById(this.courseId)
       .then(course => this.course = course);
     });
   }

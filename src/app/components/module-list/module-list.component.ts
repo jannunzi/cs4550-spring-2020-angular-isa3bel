@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import { ModuleServiceClient } from '../services/ModuleServiceClient';
+import { ModuleServiceClient } from '../../services/ModuleServiceClient';
 
 @Component({
   selector: 'app-module-list',
@@ -23,8 +23,7 @@ export class ModuleListComponent implements OnInit {
       this.moduleId = params.mid
       this.courseId = params.id
     })
-    fetch(`https://wbdv-generic-server.herokuapp.com/api/isabelbolger/courses/${this.courseId}/modules`)
-    .then(response => response.json())
+    this.service.findModulesForCourse(this.courseId)
     .then(modules => this.modules = modules);
   }
 
